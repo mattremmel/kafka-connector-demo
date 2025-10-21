@@ -1,0 +1,26 @@
+{
+  "name": "s3-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+    "tasks.max": "1",
+    "topics": "orders",
+
+    "s3.bucket.name": "kafka-bucket",
+    "s3.region": "us-east-1",
+
+    "store.url": "http://minio:9000",
+    "s3.path.style.access.enabled": "true",
+
+    "aws.access.key.id": "minioadmin",
+    "aws.secret.access.key": "minioadmin",
+
+    "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+    "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+    "schema.compatibility": "NONE",
+
+    "flush.size": "3",
+    "rotate.interval.ms": "0",
+    "behavior.on.null.values": "IGNORE",
+    "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner"
+  }
+}
