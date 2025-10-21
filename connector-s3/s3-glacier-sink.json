@@ -1,11 +1,11 @@
 {
-  "name": "s3-sink",
+  "name": "s3-glacier-sink",
   "config": {
     "connector.class": "io.confluent.connect.s3.S3SinkConnector",
     "tasks.max": "1",
     "topics": "orders",
 
-    "s3.bucket.name": "kafka-bucket",
+    "s3.bucket.name": "s3-glacier-archive",
     "s3.region": "us-east-1",
 
     "store.url": "http://minio:9000",
